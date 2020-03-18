@@ -1,0 +1,58 @@
+
+/*===================================================== 05.popular packajge section css goes here =======================================================*/
+ .popular-packages .single-package {
+     margin-bottom: 30px;
+     transition: all ease-in-out 0.5s;
+     overflow: hidden;
+     position: relative;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ .popular-packages .single-package img {
+     display: block;
+     width: 100%;
+}
+ .popular-packages .single-package .package-content {
+     padding: 20px;
+}
+ .popular-packages .single-package .package-content h3 {
+     font-weight: 600px;
+     color: #454545;
+     font-size: 20px;
+     transition: all ease-in-out 0.5s;
+}
+ .popular-packages .single-package .package-content p {
+     color: #727272;
+     font-size: 15px;
+     font-weight: 500;
+}
+ .popular-packages .single-package .package-content p span {
+     color: #37b721;
+     font-weight: 600;
+}
+ .popular-packages .single-package .package-calto-action {
+     padding: 0 20px 25px;
+}
+ .popular-packages .single-package .package-calto-action .ct-action li {
+     display: inline-block;
+}
+ .popular-packages .single-package .package-calto-action .ct-action li:first-child a {
+     transition: all ease-in-out 0.5s;
+     overflow: hidden;
+}
+ .popular-packages .single-package .package-calto-action .ct-action li:last-child {
+     float: right;
+     margin-top: 7px;
+}
+ .popular-packages .single-package .package-calto-action .ct-action li:last-child i {
+     font-size: 16px;
+     color: #ffef3b;
+}
+ .popular-packages .single-package:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+ .popular-packages .single-package:hover .ct-action a {
+     background: #f17b37;
+}
+ .popular-packages .single-package:hover .package-content h3 {
+     color: #2098D1;
+}
