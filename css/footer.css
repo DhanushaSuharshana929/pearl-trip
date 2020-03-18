@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Pattaya');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+
+.footer-heading{
+    font-size:16px;
+    font-weight: 600;/*
+    */
+/*    font-family: 'Great Vibes', cursive;*/
+    /*
+        letter-spacing: 2px;*/
+    color:#fff;
+    /*    padding-top:25px;*/
+    padding-bottom: 15px;  
+}
+.ft-nav i{
+    color:#fff;
+
+    margin-right: 15px;
+}
+.ft-nav a{
+    color:#fff;
+    font-size: 16px;
+    line-height: 32px;
+/*    margin-left: 65px;*/
+}
+
+
+.ft-img{
+    padding-left: 0px !important;
+    padding-right: 0px!important;
+    width: 34%!important;
+    margin-top: 5px;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+.geust-com-input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-color: transparent;
+    background-image: none;
+    border: #666 2px solid;
+    color:#000!important;
+}
+.geust-com-input:hover{
+    display: block;
+ 
+    border: #2098D1 2px solid;
+    color:#000!important;
+}
+.form-horizontal{
+    padding-top: 30px;
+}
+.form-line input{
+    color:#000;
+}
+.label-name{
+    color:#666;
+    font-size:20px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.geust-title{
+    display: block;
+    position: relative;
+    border-bottom:1px #666 solid;
+    color:#666;
+     font-family: 'Titillium Web', sans-serif;
+     font-size: 20px;
+     text-transform:uppercase;
+   
+}
