@@ -28,12 +28,14 @@ include_once(dirname(__FILE__) . '/Page.php');
 include_once(dirname(__FILE__) . '/Banner.php');
 include_once(dirname(__FILE__) . '/Product.php');
 include_once(dirname(__FILE__) . '/ProductType.php');
+include_once(dirname(__FILE__) . '/ExcursionType.php');
 include_once(dirname(__FILE__) . '/TourPackagePhotosNormal.php');
 
 function dd($data) {
     var_dump($data);
     exit();
 }
+
 function redirect($url) {
     $string = '<script type="text/javascript">';
     $string .= 'window.location = "' . $url . '"';
