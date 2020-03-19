@@ -12,7 +12,7 @@
 
  */
 
-class excursion_type {
+class ExcursionType {
 
 
 
