@@ -328,7 +328,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="manage-excursion-type.php">
                                 <i class="material-icons">list</i>
                                 <span>Manage</span>
                             </a>
