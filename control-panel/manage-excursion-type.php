@@ -16,7 +16,7 @@ include_once(dirname(__FILE__) . '/auth.php');
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>Tour Type</title>
+        <title>Excursion Type</title>
 
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -66,7 +66,7 @@ include_once(dirname(__FILE__) . '/auth.php');
 
                                 <h2>
 
-                                    Manage Tour Type
+                                   Excursion Type
 
                                 </h2>
 
@@ -74,7 +74,7 @@ include_once(dirname(__FILE__) . '/auth.php');
 
                                     <li>
 
-                                        <a href="create-tour-type.php">
+                                        <a href="create-excursion-type.php">
 
                                             <i class="material-icons">add</i> 
 
@@ -118,11 +118,11 @@ include_once(dirname(__FILE__) . '/auth.php');
 
                                                         <div class="d">
 
-                                                            <a href="#"  class="delete-tour-type" data-id="<?php echo $excursion_type; ?>"> <button class="glyphicon glyphicon-trash delete-btn"></button></a>
+                                                            <a href="#"  class="delete-excursion-type" data-id="<?php echo $excursion_type['id']; ?>"> <button class="glyphicon glyphicon-trash delete-btn"></button></a>
 
                                                             <a href="edit-excursion-type.php?id=<?php echo $excursion_type['id']; ?>"> <button class="glyphicon glyphicon-pencil edit-btn"></button></a>
 
-                                                            <a href="#">  <button class="glyphicon glyphicon-random arrange-btn"></button></a>
+                                                            <a href="arrange-excursion.php">  <button class="glyphicon glyphicon-random arrange-btn"></button></a>
 
                                                              </div>
 
@@ -138,7 +138,7 @@ include_once(dirname(__FILE__) . '/auth.php');
 
                                             ?> 
 
-                                            <b style="padding-left: 15px;">No packages in the database.</b> 
+                                            <b style="padding-left: 15px;">No excursion in the database.</b> 
 
                                         <?php } ?> 
 
@@ -211,7 +211,7 @@ include_once(dirname(__FILE__) . '/auth.php');
         <script src="js/pages/ui/dialogs.js"></script>
 
         <script src="js/demo.js"></script> 
-
+        <script src="delete/js/excursion-type.js" type="text/javascript"></script>
 <!--        <script src="delete/js/tour-type.js" type="text/javascript"></script>-->
 
     </body>

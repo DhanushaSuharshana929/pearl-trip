@@ -15,6 +15,7 @@ class Attraction {
 
     public $id;
     public $title;
+    public $type;
     public $image_name;
     public $short_description;
     public $description;
@@ -23,7 +24,7 @@ class Attraction {
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`title`,`image_name`,`short_description`,`description`,`queue` FROM `attraction` WHERE `id`=" . $id;
+            $query = "SELECT * FROM `attraction` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -31,6 +32,7 @@ class Attraction {
 
             $this->id = $result['id'];
             $this->title = $result['title'];
+            $this->type = $result['type'];
             $this->image_name = $result['image_name'];
             $this->short_description = $result['short_description'];
             $this->description = $result['description'];
@@ -42,8 +44,9 @@ class Attraction {
 
     public function create() {
 
-        $query = "INSERT INTO `attraction` (`title`,`image_name`,`short_description`,`description`,`queue`) VALUES  ('"
+        $query = "INSERT INTO `attraction` (`title`,`type`,`image_name`,`short_description`,`description`,`queue`) VALUES  ('"
                 . $this->title . "','"
+                . $this->type . "','"
                 . $this->image_name . "', '"
                 . $this->short_description . "', '"
                 . $this->description . "', '"
@@ -80,6 +83,7 @@ class Attraction {
 
         $query = "UPDATE  `attraction` SET "
                 . "`title` ='" . $this->title . "', "
+                . "`type` ='" . $this->type . "', "
                 . "`image_name` ='" . $this->image_name . "', "
                 . "`short_description` ='" . $this->short_description . "', "
                 . "`description` ='" . $this->description . "', "

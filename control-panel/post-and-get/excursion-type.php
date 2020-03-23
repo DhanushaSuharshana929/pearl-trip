@@ -1,13 +1,12 @@
 <?php
 
 include_once(dirname(__FILE__) . '/../../class/include.php');
-include_once(dirname(__FILE__) . '/../auth.php');
 
 if (isset($_POST['create'])) {
     $EXCURION_TYPE = new ExcursionType(NULL);
     $VALID = new Validator();
 
-    $EXCURION_TYPE->name = $_POST['title'];
+    $EXCURION_TYPE->name = $_POST['name'];
     $EXCURION_TYPE->short_description = $_POST['short_description'];
     $EXCURION_TYPE->description = $_POST['description'];
 
@@ -54,10 +53,32 @@ if (isset($_POST['create'])) {
     }
 
     $EXCURION_TYPE->image_name = $imgName;
-    $EXCURION_TYPE->create();
-    $result = ["status" => 'success'];
-    echo json_encode($result);
-    exit();
+
+    $VALID->check($EXCURION_TYPE, [
+        'name' => ['required' => TRUE],
+        'image_name' => ['required' => TRUE]
+    ]);
+
+    if ($VALID->passed()) {
+        $EXCURION_TYPE->create();
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $VALID->addError("Your data was saved successfully", 'success');
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
 }
 
 if (isset($_POST['update'])) {
@@ -66,7 +87,7 @@ if (isset($_POST['update'])) {
     $dir_dest_thumb = '../../upload/excursion-type/thumb';
 
     $handle = new Upload($_FILES['image']);
-
+    $VALID = new Validator();
     $imgName = null;
 
     if ($handle->uploaded) {
@@ -103,18 +124,39 @@ if (isset($_POST['update'])) {
         }
     }
 
-    $EXCURION_TYPE = new ExcursionType($_POST['id']); 
+    $EXCURION_TYPE = new ExcursionType($_POST['id']);
 
     $EXCURION_TYPE->id = $_POST['id'];
     $EXCURION_TYPE->name = $_POST['name'];
     $EXCURION_TYPE->image_name = $_POST['oldImageName'];
     $EXCURION_TYPE->short_description = $_POST['short_description'];
     $EXCURION_TYPE->description = $_POST['description'];
-    $EXCURION_TYPE->update();
 
-    $result = ["id" => $_POST['id']];
-    echo json_encode($result);
-    exit();
+    $VALID->check($EXCURION_TYPE, [
+        'name' => ['required' => TRUE],
+        'image_name' => ['required' => TRUE]
+    ]);
+
+    if ($VALID->passed()) {
+        $EXCURION_TYPE->update();
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        $VALID->addError("Your data was saved successfully", 'success');
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    } else {
+
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+
+        $_SESSION['ERRORS'] = $VALID->errors();
+
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
 }
 
 if (isset($_POST['save-data'])) {

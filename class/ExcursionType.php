@@ -75,7 +75,7 @@ class ExcursionType {
 
 
         $query = "INSERT INTO `excursion_type` (`name`,`short_description`,`image_name`,`description`,`sort`) VALUES  ('"
-
+     
                 . $this->name . "', '"
 
                 . $this->short_description . "', '"
@@ -86,7 +86,7 @@ class ExcursionType {
 
                 . $this->sort . "')";
 
-
+  
 
         $db = new Database();
 
@@ -185,12 +185,7 @@ class ExcursionType {
 
 
     public function delete() {
-
-
-
-        unlink(Helper::getSitePath() . "upload/excursion_type" . $this->image_name);
-
-      
+ 
 
         $query = 'DELETE FROM `excursion_type` WHERE id="' . $this->id . '"';
 
