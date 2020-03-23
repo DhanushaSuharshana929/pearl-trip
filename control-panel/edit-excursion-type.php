@@ -105,7 +105,7 @@ $vali->show_message();
 
                             <div class="body">
 
-                                <form class="form-horizontal" action="post-and-get/excursion-type.php "method="post" id="form-data" enctype="multipart/form-data"> 
+                                <form class="form-horizontal" action="post-and-get/excursion-type.php"method="post" id="form-data" enctype="multipart/form-data"> 
 
 
 

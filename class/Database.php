@@ -17,7 +17,7 @@ class Database {
 //    private $password = 'suomi@Sublime123';
      
     private $host = 'localhost';
-    private $name = 'perl_trip';
+    private $name = 'pearl_trip';
     private $user = 'root';
     private $password = '';
 

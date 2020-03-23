@@ -51,6 +51,22 @@ include_once(dirname(__FILE__) . '/auth.php');
                                     <div class="col-md-12">
                                         <div class="form-group form-float">
                                             <div class="form-line">
+                                                <label class="form-label">Excursion Type</label>
+                                                <select class="form-control place-select1 show-tick" autocomplete="off" type="text" id="type" name="type" required="TRUE">
+                                                    <?php
+                                                    $EXCURSIO_TYPE = new ExcursionType(NULL);
+                                                    foreach ($EXCURSIO_TYPE->all() as $excursion_type) {
+                                                        ?>
+                                                        <option  value="<?php echo $excursion_type['id'] ?>"><?php echo $excursion_type['name'] ?></option>
+                                                    <?php } ?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
                                                 <input type="text" id="title" class="form-control"  autocomplete="off" name="title" required="true">
                                                 <label class="form-label">Title</label>
                                             </div>
@@ -77,7 +93,7 @@ include_once(dirname(__FILE__) . '/auth.php');
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <label for="description">Description</label>
                                         <div class="form-line">
-                                           <textarea id="description" name="description" class="form-control" rows="5"></textarea> 
+                                            <textarea id="description" name="description" class="form-control" rows="5"></textarea> 
                                         </div>
 
                                     </div>

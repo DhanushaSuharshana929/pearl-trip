@@ -57,7 +57,32 @@ $ACTIVITY = new Activities($id);
                             </div>
                             <div class="body">
                                 <form class="form-horizontal" method="post" action="post-and-get/activity.php" enctype="multipart/form-data"> 
+                                    <div class="col-md-12">
+                                        <div class="form-group form-float">
+                                            <div class="form-line">
+                                                <label class="form-label">Excursion Type</label>
+                                                <select class="form-control place-select1 show-tick" autocomplete="off" type="text" id="type" name="type" required="TRUE">
+                                                    <?php
+                                                    $EXCURSIO_TYPE = new ExcursionType(NULL);
+                                                    foreach ($EXCURSIO_TYPE->all() as $excursion_type) {
+                                                        if ($excursion_type['id'] == $ACTIVITY->type) {
+                                                            ?>
+                                                            <option  value="<?php echo $excursion_type['id'] ?>" selected=""><?php echo $excursion_type['name'] ?></option>
+                                                            <?php
+                                                        } else {
+                                                            ?>
 
+                                                            <option  value="<?php echo $excursion_type['id'] ?>" ><?php echo $excursion_type['name'] ?></option>
+
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group form-float">
                                             <div class="form-line">
